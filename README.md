@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PipeFlow CRM
+
+Multi-tenant sales CRM SaaS: leads/contacts, Kanban sales pipeline, activity timeline, multi-workspace collaboration, and Stripe-based monetization. Full product spec in [docs/PRD.md](docs/PRD.md), execution plan in [docs/PLAN.md](docs/PLAN.md).
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router) + React + TypeScript 5
+- **Styling/UI:** Tailwind CSS + shadcn/ui
+- **Database/Auth:** Supabase (PostgreSQL + Row Level Security + Auth)
+- **Payments:** Stripe (Checkout + webhooks + Customer Portal)
+- **Email:** Resend (transactional, invites)
+- **Drag-and-drop:** @dnd-kit (Kanban pipeline)
+- **Charts:** Recharts (dashboard funnel/metrics)
+- **Deploy:** Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 20+
+- A [Supabase](https://supabase.com) project (for auth/database)
+- A [Stripe](https://stripe.com) account (for billing)
+- A [Resend](https://resend.com) account (for transactional email)
+
+### Setup
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Copy the environment variable template and fill in your own keys:
+
+   ```bash
+   cp .env.local.example .env.local
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) to see the result.
+
+### Scripts
+
+| Script                 | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `npm run dev`          | Start the dev server                     |
+| `npm run build`        | Production build                         |
+| `npm run start`        | Start the production server              |
+| `npm run lint`         | Run ESLint                               |
+| `npm run lint:fix`     | Run ESLint and auto-fix issues           |
+| `npm run format`       | Format the codebase with Prettier        |
+| `npm run format:check` | Check formatting without writing changes |
+
+## Project Structure
+
+```
+src/
+  app/
+    (marketing)/          # public landing page
+    (auth)/                # login, signup
+    (dashboard)/
+      [workspaceSlug]/
+        leads/
+        pipeline/
+        dashboard/
+        settings/
+    api/                   # route handlers (stripe webhook, resend, etc.)
+  components/
+    ui/                    # shadcn/ui primitives
+    kanban/
+    leads/
+    dashboard/
+  lib/
+    supabase/              # client/server helpers, RLS-aware queries
+    stripe/
+    resend/
+  types/
+docs/
+  PRD.md
+  PLAN.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See [CLAUDE.md](CLAUDE.md) for conventions (multi-tenancy via RLS, role enforcement, plan limits) that all contributions must follow.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Supabase Documentation](https://supabase.com/docs)
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The easiest way to deploy this app is via the [Vercel Platform](https://vercel.com/new). Remember to configure the same environment variables from `.env.local.example` in your Vercel project settings.
