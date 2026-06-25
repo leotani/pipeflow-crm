@@ -70,11 +70,11 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Página de Login
-- [ ] Página de Signup
-- [ ] Página de recuperação de senha
-- [ ] Estados de erro/loading visuais
-- [ ] Layout `(auth)` isolado do dashboard
+- [x] Página de Login
+- [x] Página de Signup
+- [x] Página de recuperação de senha
+- [x] Estados de erro/loading visuais
+- [x] Layout `(auth)` isolado do dashboard
 
 **Commit final:** `feat: auth screens UI (no backend)`
 
