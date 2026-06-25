@@ -33,11 +33,11 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Componentes shadcn/ui instalados (Button, Input, Card, Dialog, Dropdown, Badge, Avatar, Table, Tabs, Toast)
-- [ ] Layout base (header, sidebar, container) sem lógica de dados
-- [ ] Tipografia e paleta de cores definidas em `globals.css` / `tailwind.config`
-- [ ] Componente de WorkspaceSwitcher (visual, sem dados reais)
-- [ ] Dark mode opcional (se aplicável ao design)
+- [x] Componentes shadcn/ui instalados (Button, Input, Card, Dialog, Dropdown, Badge, Avatar, Table, Tabs, Toast)
+- [x] Layout base (header, sidebar, container) sem lógica de dados
+- [x] Tipografia e paleta de cores definidas em `globals.css` / `tailwind.config`
+- [x] Componente de WorkspaceSwitcher (visual, sem dados reais)
+- [x] Dark mode opcional (se aplicável ao design)
 
 **Commit final:** `feat: base design system and layout shell`
 
