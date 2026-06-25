@@ -88,11 +88,11 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Layout `(dashboard)/[workspaceSlug]` com sidebar de navegação
-- [ ] Cards de métricas (total leads, negócios abertos, valor pipeline, taxa de conversão) com dados mock
-- [ ] Gráfico de funil de vendas (Recharts) com dados mock
-- [ ] Lista de "negócios com prazo próximo" mockada
-- [ ] WorkspaceSwitcher funcional no front (troca entre workspaces mock)
+- [x] Layout `(dashboard)/[workspaceSlug]` com sidebar de navegação
+- [x] Cards de métricas (total leads, negócios abertos, valor pipeline, taxa de conversão) com dados mock
+- [x] Gráfico de funil de vendas (Recharts) com dados mock
+- [x] Lista de "negócios com prazo próximo" mockada
+- [x] WorkspaceSwitcher funcional no front (troca entre workspaces mock)
 
 **Commit final:** `feat: dashboard shell and metrics UI (mock data)`
 

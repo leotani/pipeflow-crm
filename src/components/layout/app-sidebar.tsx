@@ -1,6 +1,8 @@
 "use client";
 
 import { LogOut, Settings as SettingsIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -25,6 +27,7 @@ import {
 import { WorkspaceSwitcher } from "@/components/layout/workspace-switcher";
 import { mockCurrentUser } from "@/lib/mock/workspaces";
 import { mainNavItems } from "@/lib/nav-config";
+import type { Workspace } from "@/types/workspace";
 
 function userInitials(name: string) {
   return name
@@ -35,32 +38,37 @@ function userInitials(name: string) {
     .toUpperCase();
 }
 
-export function AppSidebar() {
+export function AppSidebar({ workspace }: { workspace: Workspace }) {
   const { setOpenMobile } = useSidebar();
+  const pathname = usePathname();
 
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <WorkspaceSwitcher />
+        <WorkspaceSwitcher current={workspace} />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {mainNavItems.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    tooltip={item.title}
-                    onClick={() => setOpenMobile(false)}
-                  >
-                    <a href={item.href}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {mainNavItems.map((item) => {
+                const href = `/${workspace.slug}/${item.segment}`;
+                return (
+                  <SidebarMenuItem key={item.segment}>
+                    <SidebarMenuButton
+                      asChild
+                      tooltip={item.title}
+                      isActive={pathname === href}
+                      onClick={() => setOpenMobile(false)}
+                    >
+                      <Link href={href}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

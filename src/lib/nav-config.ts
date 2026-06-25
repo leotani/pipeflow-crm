@@ -2,14 +2,14 @@ import { KanbanSquare, LayoutDashboard, Settings, Users } from "lucide-react";
 
 export type NavItem = {
   title: string;
-  href: string;
+  segment: string;
   icon: typeof LayoutDashboard;
 };
 
-// Rotas reais chegam no Milestone 4 ((dashboard)/[workspaceSlug]/...); por enquanto são placeholders visuais.
+// Leads (Milestone 5), Pipeline (Milestone 6) e Configurações ainda não têm páginas reais.
 export const mainNavItems: NavItem[] = [
-  { title: "Dashboard", href: "#dashboard", icon: LayoutDashboard },
-  { title: "Leads", href: "#leads", icon: Users },
-  { title: "Pipeline", href: "#pipeline", icon: KanbanSquare },
-  { title: "Configurações", href: "#settings", icon: Settings },
+  { title: "Dashboard", segment: "dashboard", icon: LayoutDashboard },
+  { title: "Leads", segment: "leads", icon: Users },
+  { title: "Pipeline", segment: "pipeline", icon: KanbanSquare },
+  { title: "Configurações", segment: "settings", icon: Settings },
 ];
