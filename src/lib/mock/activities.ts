@@ -1,0 +1,60 @@
+import type { Activity } from "@/types/activity";
+
+export const mockActivities: Activity[] = [
+  {
+    id: "a1",
+    leadId: "l1",
+    type: "nota",
+    note: "Lead chegou via formulário do site, interesse em plano Pro.",
+    authorName: "Leo Tani",
+    createdAt: "2026-05-12T09:15:00",
+  },
+  {
+    id: "a2",
+    leadId: "l1",
+    type: "ligacao",
+    note: "Primeira ligação de qualificação. Confirmado orçamento e prazo de decisão.",
+    authorName: "Leo Tani",
+    createdAt: "2026-05-14T14:30:00",
+  },
+  {
+    id: "a3",
+    leadId: "l1",
+    type: "email",
+    note: "Enviada proposta comercial com desconto de implantação.",
+    authorName: "Leo Tani",
+    createdAt: "2026-05-22T11:00:00",
+  },
+  {
+    id: "a4",
+    leadId: "l1",
+    type: "reuniao",
+    note: "Reunião de negociação com time financeiro da Acme.",
+    authorName: "Leo Tani",
+    createdAt: "2026-06-18T16:00:00",
+  },
+  {
+    id: "a5",
+    leadId: "l2",
+    type: "nota",
+    note: "Indicado por cliente atual (Vértice Log).",
+    authorName: "Leo Tani",
+    createdAt: "2026-05-20T08:45:00",
+  },
+  {
+    id: "a6",
+    leadId: "l2",
+    type: "email",
+    note: "Enviada proposta com plano anual e condições especiais.",
+    authorName: "Leo Tani",
+    createdAt: "2026-06-02T10:20:00",
+  },
+  {
+    id: "a7",
+    leadId: "l3",
+    type: "ligacao",
+    note: "Contato inicial realizado, aguardando retorno sobre escopo.",
+    authorName: "Ana Ferreira",
+    createdAt: "2026-06-01T13:10:00",
+  },
+];

@@ -17,9 +17,5 @@ export default async function WorkspaceLayout({
     notFound();
   }
 
-  return (
-    <DashboardShell title="Dashboard" workspace={workspace}>
-      {children}
-    </DashboardShell>
-  );
+  return <DashboardShell workspace={workspace}>{children}</DashboardShell>;
 }

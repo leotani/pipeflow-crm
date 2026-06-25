@@ -1,17 +1,24 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { mainNavItems } from "@/lib/nav-config";
 import type { Workspace } from "@/types/workspace";
 
 export function DashboardShell({
-  title,
   workspace,
   children,
 }: {
-  title: string;
   workspace: Workspace;
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const segment = pathname.split("/")[2];
+  const title = mainNavItems.find((item) => item.segment === segment)?.title ?? "Dashboard";
+
   return (
     <SidebarProvider>
       <AppSidebar workspace={workspace} />
