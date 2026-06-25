@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, ChevronsUpDown, Plus } from "lucide-react";
-import * as React from "react";
+import { useRouter } from "next/navigation";
 
 import {
   DropdownMenu,
@@ -29,8 +29,13 @@ function workspaceInitials(name: string) {
     .toUpperCase();
 }
 
-export function WorkspaceSwitcher() {
-  const [current, setCurrent] = React.useState<Workspace>(mockWorkspaces[0]);
+export function WorkspaceSwitcher({ current }: { current: Workspace }) {
+  const router = useRouter();
+
+  function handleSelect(workspace: Workspace) {
+    if (workspace.id === current.id) return;
+    router.push(`/${workspace.slug}/dashboard`);
+  }
 
   return (
     <SidebarMenu>
@@ -56,7 +61,7 @@ export function WorkspaceSwitcher() {
             {mockWorkspaces.map((workspace) => (
               <DropdownMenuItem
                 key={workspace.id}
-                onSelect={() => setCurrent(workspace)}
+                onSelect={() => handleSelect(workspace)}
                 className="gap-2"
               >
                 <div className="bg-secondary text-secondary-foreground flex size-6 shrink-0 items-center justify-center rounded-md text-[0.65rem] font-semibold">
