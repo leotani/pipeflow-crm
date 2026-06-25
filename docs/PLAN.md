@@ -51,12 +51,12 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Seção Hero
-- [ ] Seção Funcionalidades
-- [ ] Seção Planos e Preços (Free vs Pro)
-- [ ] Seção CTA final
-- [ ] Header/Footer públicos
-- [ ] Responsividade mobile
+- [x] Seção Hero
+- [x] Seção Funcionalidades
+- [x] Seção Planos e Preços (Free vs Pro)
+- [x] Seção CTA final
+- [x] Header/Footer públicos
+- [x] Responsividade mobile
 
 **Commit final:** `feat: public landing page`
 
