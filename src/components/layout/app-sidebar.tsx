@@ -53,6 +53,22 @@ export function AppSidebar({ workspace }: { workspace: Workspace }) {
             <SidebarMenu>
               {mainNavItems.map((item) => {
                 const href = `/${workspace.slug}/${item.segment}`;
+
+                if (!item.enabled) {
+                  return (
+                    <SidebarMenuItem key={item.segment}>
+                      <SidebarMenuButton
+                        tooltip={`${item.title} (em breve)`}
+                        disabled
+                        className="opacity-50"
+                      >
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                }
+
                 return (
                   <SidebarMenuItem key={item.segment}>
                     <SidebarMenuButton
