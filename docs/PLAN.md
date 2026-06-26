@@ -106,10 +106,10 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Listagem de leads com busca e filtros (status, responsável, data) sobre dados mock
-- [ ] Formulário de cadastro/edição de lead (nome, e-mail, telefone, empresa, cargo, status)
-- [ ] Página de detalhe do lead com perfil completo
-- [ ] Timeline de atividades (visual, mock)
+- [x] Listagem de leads com busca e filtros (status, responsável, data) sobre dados mock
+- [x] Formulário de cadastro/edição de lead (nome, e-mail, telefone, empresa, cargo, status)
+- [x] Página de detalhe do lead com perfil completo
+- [x] Timeline de atividades (visual, mock)
 
 **Commit final:** `feat: leads list, detail and forms UI (mock data)`
 
