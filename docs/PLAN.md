@@ -123,10 +123,10 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Colunas fixas: Novo Lead, Contato Realizado, Proposta Enviada, Negociação, Fechado Ganho, Fechado Perdido
-- [ ] Cards de negócio (título, valor estimado, lead vinculado, responsável, prazo)
-- [ ] Drag-and-drop entre colunas com `@dnd-kit` (estado em memória, sem persistência)
-- [ ] Modal/drawer de criação e edição de negócio
+- [x] Colunas fixas: Novo Lead, Contato Realizado, Proposta Enviada, Negociação, Fechado Ganho, Fechado Perdido
+- [x] Cards de negócio (título, valor estimado, lead vinculado, responsável, prazo)
+- [x] Drag-and-drop entre colunas com `@dnd-kit` (estado em memória, sem persistência)
+- [x] Modal/drawer de criação e edição de negócio
 
 **Commit final:** `feat: kanban pipeline UI with drag-and-drop (local state)`
 
