@@ -140,9 +140,9 @@ Estratégia: **interface primeiro (com dados mockados), backend depois**. Cada m
 
 **Entregas:**
 
-- [ ] Formulário de nova atividade (Ligação, E-mail, Reunião, Nota)
-- [ ] Timeline cronológica completa na página de detalhe do lead
-- [ ] Autor e data exibidos por atividade
+- [x] Formulário de nova atividade (Ligação, E-mail, Reunião, Nota)
+- [x] Timeline cronológica completa na página de detalhe do lead
+- [x] Autor e data exibidos por atividade
 
 **Commit final:** `feat: activity log and timeline UI (mock data)`
 

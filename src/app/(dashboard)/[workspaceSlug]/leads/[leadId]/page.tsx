@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { LeadActivityPanel } from "@/components/leads/lead-activity-panel";
 import { LeadProfile } from "@/components/leads/lead-profile";
-import { LeadTimeline } from "@/components/leads/lead-timeline";
 import { mockActivities } from "@/lib/mock/activities";
 import { mockLeads } from "@/lib/mock/leads";
 
@@ -25,7 +25,7 @@ export default async function LeadDetailPage({
         <LeadProfile lead={lead} />
       </div>
       <div className="lg:col-span-2">
-        <LeadTimeline activities={activities} />
+        <LeadActivityPanel leadId={lead.id} initialActivities={activities} />
       </div>
     </div>
   );
